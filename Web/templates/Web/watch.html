@@ -1,0 +1,93 @@
+{% extends "Web/includes/template.html" %}
+{% load static %}
+
+{% block othercss %}
+    <link href="{% static 'Web/css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'Web/css/opportunity.css' %}" rel="stylesheet">
+{% endblock othercss %}
+
+{% block linkhome %}
+    <li><a href="{% url 'home' %}" class="waves-effect arrow-r"><i class="fa fa-home"></i> Home </a>
+
+    </li>
+{% endblock linkhome %}
+
+{% block maincontent %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-12">
+                <!-- opportunity picture -->
+                <div class="opportunity">
+                    <img src="{% static 'Web/img/back-sign-3.jpg' %}" alt="opportunity picture">
+                </div>
+                <!-- / opportunity picture -->
+                <!-- opportunity details -->
+                <div class="opportunity-info mt-3">
+                    <!-- What contains an opportunity ? Title, Description, Location, -->
+                    <h2>
+                        Title,&nbsp;&nbsp; {{ datas.title }}
+                    </h2>
+                    <h4>
+                        {{ datas.localisation.name }}&nbsp;&nbsp; |&nbsp;&nbsp; {{ datas.average }}
+                    </h4>
+                </div>
+                <div>
+                    <h3>
+                        <a href="{% url 'category' datas.cat.id_cat %}">{{ datas.cat.name_cat }}</a>
+                    </h3>
+                    {{ datas.description }}
+                </div>
+                <!-- / opportunity details -->
+                <!-- comments section-->
+                <div class="comments">
+                </div>
+                <!-- / comments section -->
+            </div>
+            <div class="col-5 col-md-5 col-sm-12 similars">
+                <div class="row m-0 p-0">
+                    <h3>Similar Opportunities</h3>
+                </div>
+                {% for opp in datas.sim_opp %}
+                    <div class="media mb-2" id="{{ opp.id_opp }}">
+                        <a href="{% url 'opportunity' opp.id_opp %}"><img src="{% static 'Web/img/back-sign-1.jpg' %}" height="120" width="180"></a>
+                        <div class="media-body ml-4 mt-0">
+                            <div class="row">
+                                <h4>{{ opp.title }}</h4>
+                            </div>
+                            <div class="row">
+                                <p>{{ opp.location }}&nbsp;&nbsp; | {{ opp.mean }}</p>
+                            </div>
+                            {% if is_connected %}
+                                <div class="row dropdown mt-0">
+                                    <button class="btn btn-md more" type="button" data-toggle="dropdown">
+                                        <i class="fa fa-ellipsis-h rotate-icon"></i>
+                                    </button>
+                                    <ul class="dropdown-menu options-opp">
+                                        {% if opp.see_later %}
+                                            <li>
+                                                <a onclick="removeseelater('{{ opp.id_opp }}')">Remove from see later</a>
+                                            </li>
+                                        {% else %}
+                                            <li>
+                                                <a onclick="addseelater('{{ opp.id_opp }}')">See later</a>
+                                            </li>
+                                        {% endif %}
+                                        <li>
+                                            <a>Pas intéressé</a>
+                                        </li>
+                                        <li>
+                                            <a>Signaler</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock maincontent %}
+{% block otherjs %}
+    <script type="text/javascript" src="{% static 'Web/js/opportunity.js' %}"></script>
+{% endblock otherjs %}

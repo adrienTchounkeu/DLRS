@@ -1,0 +1,48 @@
+{% extends "Web/includes/base-sign.html" %}
+{% block linktosignup %}
+
+{% endblock linktosignup %}
+{% block linktosignin %}
+
+{% endblock linktosignin %}
+
+{% block content %}
+    <div  class="contenu-main pl-3">
+        <div class="row titre titre-sign-up">
+            <div class="col-3">
+                <h4>
+                    Register Form
+                </h4>
+            </div>
+            <div class="col-8">
+                <!-- Stepper -->
+                <div class="steps-form">
+                    <div class="steps-row setup-panel">
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-circle">1</a>
+                            <p>Step 1</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                            <p>Step 2</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-circle" disabled="disabled">3</a>
+                            <p>Step 3</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-circle" disabled="disabled">4</a>
+                            <p>Step 4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row message-reception-email pt-3">
+            <p>
+                An e-mail had been sent to your inbox. Please check!
+            </p>
+        </div>
+    </div>
+{% endblock content %}
+{% block otherscript %}{% endblock otherscript %}

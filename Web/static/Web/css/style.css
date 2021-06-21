@@ -1,0 +1,240 @@
+/*
+All the page
+ */
+body *:not(.fa){
+    font-family: Candara !important;
+}
+
+/*
+les languages
+ */
+.flag{
+    height: 10px;
+    width: 10px;
+}
+
+.badge-language{
+    background-color: #534186;
+    color: white;
+}
+
+.languages .dropdown-item{
+    width: 50px !important;
+    height: 30px !important;
+    padding-top: 3px !important;
+}
+
+.languages .dropdown-item:hover{
+    background-color: #dbdbdb !important;
+}
+
+.languages{
+    width: 40px !important;
+    height: 48px !important;
+    padding-right: 0px;
+}
+
+/*
+le logo
+ */
+.logo{
+    margin-left: 10px;
+    width: 50%;
+}
+
+/*
+la photo de profile et son dropdown
+ */
+.avatar img{
+    height: 50px;
+    width: 35px;
+}
+
+.avatar *{
+    color: #616161 !important;
+}
+
+.dropdown-item-perso *{
+    color: #616161 !important;
+}
+
+.dropdown-item-perso .fa{
+    color: #a6a6a6 !important;
+    font-size: 15px;
+}
+
+.dropdown-item-perso:hover{
+    background-color: rgba(83,65,134,0.8) !important;
+    color: whitesmoke !important;
+}
+
+.icondropdown:hover{
+    color: whitesmoke !important;
+}
+
+
+/*
+la barre de recherche
+ */
+
+.loupe{
+    border: none;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    border: 1px solid #dbdbdb;
+    color: #a4a4a4;
+    height: 100%;
+    padding-left: 2% !important;
+}
+
+.loupe:hover, .optionsearch:hover{
+    background-color: #534186 !important;
+    color: white;
+}
+
+.optionsearch{
+    border: none;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    border: 1px solid #dbdbdb;
+    color: #a4a4a4;
+    margin-right:2px;
+    padding-left: 2% !important;
+}
+
+.search{
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    border-right: none;
+    border-left: none;
+    padding: 0px;
+}
+
+.search input{
+    width:100%;
+    padding-left: 6px;
+    padding-right: 6px;
+    border:none;
+    border-right: 1px solid #dbdbdb;
+    box-shadow: 0px 0px 5px 0px #dbdbdb inset;
+    margin-left: 0px !important;
+}
+
+.sign-not-connect{
+    border: 1px solid #534186 !important;
+    color: #534186 !important;
+}
+
+div.float-left{
+    display: absolute;
+    left: 5px;
+    right: 5px;
+}
+
+.formulaire{
+    margin-bottom: 2px !important;
+    margin-right: 5% !important;
+    padding: 0px;
+    margin-left: -15%;
+    overflow: visible;
+    height: 35px;
+}
+
+/*
+le boutton pour afficher le sidenav
+ */
+.button-collapse{
+    color: #534186 !important;
+}
+
+/*
+le sidenav
+ */
+
+#slide-out{
+    width: 280px !important;
+    margin-left: -40px !important;
+    background-image: url(../img/back-side-2.jpg);
+}
+
+.links *{
+    color: #484848 !important;
+}
+
+.social *{
+    color: #534186 !important;
+}
+
+#slide-out .mask{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(254, 254, 254, 0.71);
+}
+
+.active{
+    background-color: rgba(83,65,134,0.7) !important;
+    color: whitesmoke !important;
+}
+
+.active *{
+    color: whitesmoke !important;
+}
+
+.collapsible-header.waves-effect.arrow-r:hover{
+    background-color: rgba(172, 177, 181, 0.7) !important;
+}
+
+.scroller{
+    max-height: 100%;
+    overflow-y: scroll;
+}
+/*
+général
+*/
+.btn-floating{
+    z-index: 999;
+    margin-left: calc(100% - 50px);
+    position: fixed;
+    height: 50px !important;
+    width: 50px !important;
+    padding-top: 6px;
+    background-color: #534186;
+}
+
+.btn-floating:hover{
+    background-color: rgba(100, 177, 93, 0.51);
+}
+
+.dropdown-menu{
+    border-radius: 0px;
+}
+
+::-webkit-scrollbar{
+    width: 12px !important;
+}
+
+::-webkit-scrollbar-button {
+    /* 2 */
+}
+
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+    border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-track-piece{
+    /* 4 */
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 10px !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important;
+}
+
+::-webkit-scrollbar-corner{
+    /* 6 */
+}
+
+::-webkit-resizer{
+    /* 7 */
+}

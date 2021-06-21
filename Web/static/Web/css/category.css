@@ -1,0 +1,43 @@
+/* Card styling */
+div.card {
+    min-width: 234px;
+    max-width: 240px;
+    margin-left: 13%;
+    margin-bottom: 10px;
+    /*box-shadow: 0px 0px 0px 0px white !important;
+    border: 1px solid rgba(172, 177, 181, 0.7) !important;*/
+    border-radius: 2px;
+}
+
+.card-deck:last-child {
+    margin-bottom: 50px;
+}
+
+/* ! Card Styling */
+
+#blabla {
+    display: none !important;
+    visibility: hidden;
+}
+
+.more {
+    margin-left: 0px;
+    margin-bottom: -2px;
+    padding-left: 13px !important;
+    padding-top: 7px !important;
+    height: 30px !important;
+    width: 30px !important;
+    background-color: #534186 !important;
+}
+
+.options-opp {
+    padding: 0px;
+}
+
+.options-opp li:hover {
+    background-color: #dbdbdb;
+}
+
+.card-body > * {
+    margin-bottom: 2px !important;
+}

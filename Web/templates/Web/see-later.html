@@ -1,0 +1,68 @@
+{% extends "Web/includes/template.html" %}
+{% load static %}
+
+{% block othercss %}
+    <link href="{% static 'Web/css/home.css' %}" rel="stylesheet">
+{% endblock othercss %}
+
+{% block linkhome %}
+    <li><a href="{% url 'home' %}" class="waves-effect arrow-r"><i class="fa fa-home"></i> Home </a>
+
+    </li>
+{% endblock linkhome %}
+{% block linkseelater %}
+    <li><a href="{% url 'display_see_later' %}" class="active waves-effect arrow-r"><i class="fa fa-clock-o"></i> See Later </a>
+
+    </li>
+{% endblock linkseelater %}
+
+{% block maincontent %}
+    <div class="container">
+        {% for class in datas %}
+            <h2>Ajouté le &nbsp; {{ class.date }}</h2>
+            <hr />
+            <!-- Card deck -->
+            <div class="card-deck">
+                {% for opp in class.opp_date %}
+                    <!-- Card -->
+                    <div class="card mt-3" id="{{ opp.id_opp }}">
+                        <!--Card image-->
+                        <div class="view overlay">
+                            <img class="card-img-top" src="{% static 'Web/img/back-sign-4.jpg' %}" alt="Card image cap">
+                            <a href="{% url 'opportunity' opp.id_opp %}">
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <!--Card content-->
+                        <div class="card-body">
+                            <!--Title-->
+                            <h4 class="card-title mt-0">{{ opp.name_opp }}</h4>
+                            <!--Text-->
+                            <p class="card-text">{{ opp.name_localisation }} &nbsp;&nbsp; | &nbsp;&nbsp; {{ opp.mean }}</p>
+                            <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+                            {% if is_connected %}
+                                <div class="dropdown">
+                                    <button class="btn btn-md more" type="button" data-toggle="dropdown">
+                                        <i class="fa fa-ellipsis-h rotate-icon"></i>
+                                    </button>
+                                    <ul class="dropdown-menu options-opp">
+                                        <li>
+                                            <a onclick="removeseelater('{{ opp.id_opp }}')">Remove from see later</a>
+                                        </li>
+                                        <li>
+                                            <a>Pas intéressé</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <!-- Card -->
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock maincontent %}
+{% block otherjs %}
+    <script type="text/javascript" src="{% static 'Web/js/seelater.js' %}"></script>
+{% endblock otherjs %}

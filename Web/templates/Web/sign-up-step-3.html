@@ -1,0 +1,134 @@
+{% extends "Web/includes/base-sign.html" %}
+{% block linktosignup %}
+
+{% endblock linktosignup %}
+{% block linktosignin %}
+
+{% endblock linktosignin %}
+
+{% block content %}
+    <div  class="contenu-main pl-3" id="div-step-3">
+        <div class="row titre titre-sign-up">
+            <div class="col-3">
+                <h4>
+                    Register Form
+                </h4>
+            </div>
+            <div class="col-8">
+                <!-- Stepper -->
+                <div class="steps-form">
+                    <div class="steps-row setup-panel">
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-default btn-circle">1</a>
+                            <p>Step 1</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-circle" disabled="disabled">2</a>
+                            <p>Step 2</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                            <p>Step 3</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-circle" disabled="disabled">4</a>
+                            <p>Step 4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contain-form-sign-up-step-3 pt-3">
+            <div class="row mb-4">
+                <h4>
+                    Select your favorite locations
+                </h4>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <!--Google map-->
+                    <div id="map-container-7" class="z-depth-1-half map-container ml-3" style="height: 400px"></div>
+                    <br/>
+                    <div>
+
+                    </div>
+                </div>
+                <div class="col-6">
+                    <ul class="list-group" id="locations-selected">
+
+                    </ul>
+                    <div class="row mt-3"  id="to-step-4">
+                        <div class="col-3">
+                            <button type="submit" class="btn" id="submit-form-step-3">Next</button>
+                            <input id="blabla" value="{{id_user}}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  class="contenu-main pl-3" id="div-step-4">
+        <div class="row titre titre-sign-up">
+            <div class="col-3">
+                <h4>
+                    Register Form
+                </h4>
+            </div>
+            <div class="col-8">
+                <!-- Stepper -->
+                <div class="steps-form">
+                    <div class="steps-row setup-panel">
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-default btn-circle">1</a>
+                            <p>Step 1</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-circle" disabled="disabled">2</a>
+                            <p>Step 2</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-circle" disabled="disabled">3</a>
+                            <p>Step 3</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                            <p>Step 4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row contain-form-sign-up-step-4">
+            <div class="row mt-3">
+                <h4>
+                    Select your preferences
+                </h4>
+            </div>
+            <ul class="collapsible collapse-panel-perso list-unstyled" id="choosepreferences">
+                {% for cat in preferences %}
+                    <li>
+                        <div class="collapsible-header">{{ cat.title_cat }}</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                {% for pref in cat.pref_cat %}
+                                    <div class="col-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="{{ pref.id_pref }}">
+                                        <label class="form-check-label" for="{{ pref.id_pref }}">{{ pref.name_pref }}</label>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <button class="btn" id="back-to-location">Back to locations</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn" id="submit-form-step-4">Finish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

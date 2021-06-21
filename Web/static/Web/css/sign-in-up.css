@@ -1,0 +1,433 @@
+
+/*
+page entière
+ */
+body *:not(.fa){
+    font-family: Candara !important;
+}
+
+.errors{
+    color: red;
+    height: 60px;
+}
+
+div.float-left{
+    display: absolute;
+    left: 5px;
+    right: 5px;
+}
+
+/*
+les languages
+ */
+
+.flag{
+    height: 10px;
+    width: 10px;
+}
+
+.badge-language{
+    background-color: #534186;
+    color: white;
+}
+
+.languages .dropdown-item{
+    width: 50px !important;
+    height: 30px !important;
+    padding-top: 3px !important;
+}
+
+.languages .dropdown-item:hover{
+    background-color: #dbdbdb !important;
+}
+
+.languages{
+    width: 40px !important;
+    height: 48px !important;
+    padding-right: 0px;
+    border: 1px solid white;
+}
+
+/*
+le logo
+ */
+.logo{
+    margin-left: 10px;
+    width: 60%;
+}
+
+/*
+main
+ */
+html,
+body,
+header,
+.view {
+    height: 100%;
+}
+
+.back-center{
+    background-image: url(../img/back-sign-3.jpg);
+    background-size: 100% 100%;
+}
+
+.back-center .masque{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(59, 56, 59, 0.7);
+    padding-top: 100px;
+    overflow-y: scroll;
+}
+
+
+/*
+navbar
+ */
+
+.nav-flex-icons a:hover, .link-perso:hover{
+    color: rgba(121, 216, 111, 0.51) !important;
+}
+
+.nav-flex-icons .border:hover{
+    border: 1px solid rgba(121, 216, 111, 0.51) !important;
+}
+
+/*
+contenue principal
+ */
+.contenu-main{
+    height: 500px;
+    min-width: 1000px;
+    margin-top: 0px !important;
+}
+
+.contenu-main > *{
+    height: 100%;
+}
+
+/*
+**********************************************************SIGN IN**********************************
+ */
+
+.form-sign-in{
+    height: 100%;
+    margin-right: 14px;
+    min-width: 350px !important;
+}
+
+.titre{
+    margin: auto;
+    width: 100%;
+    height: 70px;
+    background-color: #534186 !important;
+    color: white;
+}
+
+.titre h4{
+    margin-left: 50px;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.form-sign-in .body{
+    height: 250px !important;
+    background-color: white;
+    width: 100%;
+    padding-top: 50px;
+}
+
+.form-sign-in .footer-sign-in{
+    height: 65px;
+    background-color: white;
+    width: 100%;
+    margin: auto;
+}
+
+.form-sign-in .options-sign-in-text{
+    height: 40px;
+    background-color: white;
+    width: 100%;
+    margin: auto;
+    color: #212121;
+    padding-top: 20px;
+}
+
+.form-sign-in .options-sign-in{
+    height: 65px;
+    background-color: white;
+    width: 100%;
+    margin: auto;
+    margin-top: 0px;
+}
+
+.form-sign-in .link-sign-up{
+    height: 30px;
+    background-color: white;
+    width: 100%;
+    margin: auto;
+    padding-left: 55%;
+}
+
+.form-sign-in .options-sign-in *{
+    color: #534186 !important;
+}
+
+button[type=submit]{
+    background-color: #534186;
+    height: 50px;
+    width: 150px;
+    font-weight: bold;
+}
+
+.field-sign{
+    height: 50px;
+    width: 90%;
+    margin: auto;
+    margin-left: 5%;
+}
+
+.field-sign:not(last-child){
+    margin-bottom: 20px;
+}
+
+.field-sign input{
+    height: 92%;
+    width: 90% !important;
+    border: 1px solid #dbdbdb;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: none;
+}
+
+.field-sign select{
+    height: 100%;
+    width: 100% !important;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+.field-sign input:focus:not([readonly]){
+    border-bottom: 1px solid #534186;
+    box-shadow:0 1px 0 0 #534186;
+}
+
+.field-sign input:focus:not([readonly])+label{
+    color: #534186 !important;
+    border-bottom: 1px solid #534186;
+    box-shadow:0 1px 0 0 #534186;
+}
+
+.field-sign label{
+    height: 100% !important;
+    width: 10%;
+    border: 1px solid #dbdbdb;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-left: none;
+    text-align: center;
+    padding-top: 10px;
+    padding-right: 10px;
+    color: #a4a4a4;
+}
+
+/*
+**********************************************************SIGN UP**********************************
+ */
+
+.titre-sign-up{
+    width: 80%;
+}
+
+.contain-form-sign-up{
+    margin: auto;
+    width: 80%;
+    background-color: white;
+    height: auto;
+}
+
+.others-sign-up div:last-child *{
+    color: #534186 !important;
+}
+
+#submit-form{
+    background-color: #534186;
+    height: 50px;
+    width: 150px;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-left: 0px !important;
+}
+
+/*
+******************************************************MESSAGE DE RECEPTION EMAIL**************************************
+ */
+.message-reception-email{
+    margin: auto;
+    padding-top: 60px;
+    background-color: white !important;
+    color: black;
+    width: 80%;
+    height: 200px;
+    min-width: 500px;
+    font-size: 45px;
+    justify-content: center;
+    text-align: center;
+    opacity: 0.95;
+}
+
+/*
+le steppers
+ */
+.steps-form {
+    display: table;
+    width: 100%;
+    position: relative; }
+.steps-form .steps-row {
+    display: table-row; }
+.steps-form .steps-row:before {
+    top: 35px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc; }
+.steps-form .steps-row .steps-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+.steps-form .steps-row .steps-step p {
+    margin-top: -10px; }
+
+.steps-form .steps-row .steps-step .btn-white {
+    color: black !important;
+}
+
+.steps-form .steps-row .steps-step .btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 12px;
+    margin-top: 0px;
+}
+
+/*
+********************************ETAPE 3 CHOIX DE VILLE*******************************
+ */
+
+.contain-form-sign-up-step-3{
+    margin: auto;
+    width: 80%;
+    background-color: white;
+    height: auto;
+}
+
+.contain-form-sign-up-step-3 > div:last-child{
+    margin-bottom: 20px !important;
+}
+
+.contain-form-sign-up-step-3 h4{
+    margin: auto !important;
+    margin-top: 18px;
+    font-weight: bolder;
+}
+
+#to-step-4{
+    padding-left: calc(100% - 35px) !important;
+}
+
+#locations-selected{
+    margin: auto;
+    width: 90% !important;
+}
+
+#locations-selected button{
+    width: 10px !important;
+    padding-left: 15px !important;
+}
+
+/*
+****************************************STEP 4**************************
+ */
+
+.collapse-panel-perso{
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    box-shadow: 0px 0px 2px 2px #dbdbdb;
+}
+
+.collapsible-header{
+    height: 50px;
+    border-radius: 1px;
+    border: 1px solid #dbdbdb;
+    width: 100%;
+    font-size: 25px;
+    padding-left: 10px;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.collapsible-body{
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.contain-form-sign-up-step-4{
+    margin: auto;
+    width: 80%;
+    background-color: white;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.contain-form-sign-up-step-4 > div:last-child{
+    width: 90%;
+    margin: auto;
+}
+
+.contain-form-sign-up-step-4 > div:last-child > div:first-child{
+    padding-left: 0px !important;
+}
+
+.contain-form-sign-up-step-4 > div:first-child{
+    margin: auto;
+}
+
+
+.contain-form-sign-up-step-4 h4{
+    margin: auto !important;
+    margin-top: 18px;
+    font-weight: bolder;
+}
+
+#submit-form-step-4, #submit-form-step-3{
+    background-color: #534186;
+    height: 50px;
+    width: 150px;
+    font-weight: bold;
+    margin-left: calc(100% - 142px);
+}
+
+#back-to-location{
+    background-color: #534186;
+    height: 50px;
+    width: 200px;
+    font-weight: bold;
+}
+
+#div-step-4{
+    display: none;
+}
+
+#blabla{
+    display: none;
+}

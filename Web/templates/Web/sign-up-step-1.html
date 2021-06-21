@@ -1,0 +1,122 @@
+{% extends "Web/includes/base-sign.html" %}
+{% block linktosignup %}
+
+{% endblock linktosignup %}
+
+{% block content %}
+    <form  class="contenu-main pl-3" method="post" action="{% url 'display_sign_up_step_1' %}">
+        {% csrf_token %}
+        <div class="row titre titre-sign-up">
+            <div class="col-3">
+                <h4>
+                    Register Form
+                </h4>
+            </div>
+            <div class="col-8">
+                <!-- Stepper -->
+                <div class="steps-form">
+                    <div class="steps-row setup-panel">
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-default btn-circle">1</a>
+                            <p>Step 1</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-circle" disabled="disabled">2</a>
+                            <p>Step 2</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-circle" disabled="disabled">3</a>
+                            <p>Step 3</p>
+                        </div>
+                        <div class="steps-step">
+                            <a href="#" type="button" class="btn btn-white btn-circle" disabled="disabled">4</a>
+                            <p>Step 4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row contain-form-sign-up pt-3">
+            <div class="col-6">
+                <div class="field-sign d-inline-flex">
+                    <input type="text" placeholder="Firstname" id="firstname" name="firstname" value="{{ firstname }}" required autofocus>
+                    <label>
+                        <i class="fa fa-user-circle-o"></i>
+                    </label>
+                </div>
+                <div class="field-sign d-inline-flex">
+                    <input type="text" placeholder="Lastname" id="lastname" name="lastname" value="{{ lastname }}" required>
+                    <label>
+                        <i class="fa fa-user-circle-o"></i>
+                    </label>
+                </div>
+                <div class="field-sign d-inline-flex">
+                    <input type="email" placeholder="Email" id="email" name="email" value="{{ email }}" required>
+                    <label>
+                        <i class="fa fa-user-circle"></i>
+                    </label>
+                </div>
+                <div class="field-sign d-inline-flex">
+                    <input type="text" placeholder="Phone number" id="phonenumber" name="phonenumber" value="{{ phonenumber }}" required>
+                    <label>
+                        <i class="fa fa-phone-square"></i>
+                    </label>
+                </div>
+                <div class="field-sign d-inline-flex others-sign-up">
+                    <div class="w-25">
+                        <h6 class="mt-3">Or sign up with</h6>
+                    </div>
+                    <div class="w-75 d-flex justify-content-center options-sign-in">
+                        <!--Facebook-->
+                        <a href="#" class="fa-lg p-2 m-2 fb-ic"><i class="fa fa-facebook white-text fa-lg"> </i></a>
+                        <!--Twitter-->
+                        <a href="#" class="fa-lg p-2 m-2 tw-ic"><i class="fa fa-twitter white-text fa-lg"> </i></a>
+                        <!--Google +-->
+                        <a href="#" class="fa-lg p-2 m-2 gplus-ic"><i class="fa fa-google-plus white-text fa-lg"> </i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="field-sign d-inline-flex">
+                    <input type="password" placeholder="Password" id="password" name="password" required>
+                    <label>
+                        <i class="fa fa-lock"></i>
+                    </label>
+                </div>
+                <div class="field-sign d-inline-flex">
+                    <input type="password" placeholder="Confirm password" id="confirmpassword" name="confirmpassword" required>
+                    <label>
+                        <i class="fa fa-lock"></i>
+                    </label>
+                </div>
+                <div class="field-sign d-inline-flex">
+                    <select class="browser-default" id="economicstatus" name="economicstatus" required>
+                        <option value="" disabled selected>Choose your economic statut</option>
+                        <option value="1">Simple enterpreneur</option>
+                        <option value="2">Small enterprise</option>
+                        <option value="3">Great enterprise</option>
+                    </select>
+                </div>
+                <div class="field-sign d-inline-flex errors">
+                    {% if errormsg %}
+                        {{ errormsg|striptags }}
+                    {% endif %}
+                </div>
+                <div class="field-sign d-inline-flex pr-0">
+                    <div class="col-6">
+                        <button type="submit" class="btn" id="submit-form">Sign up</button>
+                    </div>
+                    <div class="col-6 mt-3">
+                        <h6>Already a member?
+                            <a href="{% url 'display_sign_in' %}" class="link-perso">
+                                Sign in
+                            </a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+{% endblock content %}
+{% block otherscript %}{% endblock otherscript %}

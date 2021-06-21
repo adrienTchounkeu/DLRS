@@ -1,0 +1,60 @@
+{% extends "Web/includes/template.html" %}
+{% load static %}
+
+{% block othercss %}
+<link href="{% static 'Web/css/history.css' %}" rel="stylesheet">
+{% endblock othercss %}
+
+{% block linkhome %}
+<li><a href="{% url 'home' %}" class="waves-effect arrow-r"><i class="fa fa-home"></i> Home </a>
+
+</li>
+{% endblock linkhome %}
+{% block linkhistory %}
+<li><a href="{% url 'display_history' %}" class="active waves-effect arrow-r"><i class="fa fa-history"></i> History </a>
+
+</li>
+{% endblock linkhistory %}
+
+{% block maincontent %}
+<div class="container">
+    <div class="jumbotron">
+        History
+    </div>
+    <div class="history-element">
+        <div class="close">
+            X
+        </div>
+        <div class="media" style="border: none">
+            <img class="media-left" width="400" alt="Image" src="{% static 'Web/img/back-sign-4.jpg' %}">
+            <div class="media-body">
+                <h3 class="card-title">Title</h3>
+                <p class="card-text">Category</p>
+                <div class="footer">
+                    lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+                    sit amet lorem ipsum dolor
+                    sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem
+                    ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+                    sit amet
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--div class="dropdown side-panel">
+    <button class="btn btn-primary dropdown-toggle sort-options" type="button" data-toggle="dropdown">Sort Options
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#">Date</a>
+        </li>
+        <li>
+            <a href="#">Stars</a>
+        </li>
+        <li>
+            <a href="#">Ratings</a>
+        </li>
+    </ul>
+</div-->
+{% endblock maincontent %}

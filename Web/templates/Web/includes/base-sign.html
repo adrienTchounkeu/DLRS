@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Material Design Bootstrap</title>
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{% static 'Web/css/font-awesome.css' %}">
+        <link href="{% static 'Web/css/mdbpro.css' %}" rel="stylesheet">
+        <link href="{% static 'Web/css/sign-in-up.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+            <div class="container">
+
+                <!-- Brand -->
+                <a class="navbar-brand" href="#">
+                    <div class="breadcrumb-dn mr-auto">
+                        <img src="{% static 'Web/img/logo2.png' %}" alt="placeholder" class="img-fluid logo">
+                    </div>
+                </a>
+
+                <!-- Collapse -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right -->
+                    <ul class="navbar-nav nav-flex-icons">
+                        <li class="nav-item dropdown ml-2">
+                            <a class="nav-link dropdown-toggle" href="#" id="navlanguages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="badge badge-language">En <img src="{% static 'Web/img/england.jpg' %}" alt="mx-auto white" class="flag z-depth-0"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right languages" aria-labelledby="navlanguages" style="background-color: rgba(0,0,0,0)">
+                                <a class="dropdown-item" href="#"><span class="badge badge-language">Fr <img src="{% static 'Web/img/french.png' %}" alt="mx-auto white" class="flag z-depth-0"></span></a>
+                                <a class="dropdown-item" href="#"><span class="badge badge-language">Ita <img src="{% static 'Web/img/italy.jpg' %}" alt="mx-auto white" class="flag z-depth-0"></span></a>
+                            </div>
+                        </li>
+                        <li class="nav-item mr-2">
+                            <a href="{% url 'home' %}" class="nav-link border rounded">
+                                Start looking for opportunities
+                            </a>
+                        </li>
+                        {% block linktosignup %}
+                        <li class="nav-item">
+                            <a href="{% url 'display_sign_up_step_1' %}" class="nav-link border rounded">
+                                Sign-up
+                            </a>
+                        </li>
+                        {% endblock linktosignup %}
+                        {% block linktosignin %}
+                        <li class="nav-item">
+                            <a href="{% url 'display_sign_in' %}" class="nav-link border rounded">
+                                Login
+                            </a>
+                        </li>
+                        {% endblock linktosignin %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- /.Navbar -->
+        <div class="view full-page-intro back-center">
+            <div class="masque">
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+        <script type="text/javascript" src="{% static 'Web/js/compiled.min.js' %}"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="{% static 'Web/js/popper.min.js' %}"></script>
+
+        {% block otherscript %}
+        <script type="text/javascript" src="{% static 'Web/js/positions.js' %}"></script>
+        <script type="text/javascript" src="{% static 'Web/js/style.js' %}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzL0oE9qBJmo19xQNkz4Js67Y4U76yDJQ&callback=initMap"></script>
+        {% endblock otherscript %}
+    </body>
+</html>

@@ -1,0 +1,68 @@
+{% extends "Web/includes/base-sign.html" %}
+{% block linktosignin %}{% endblock linktosignin %}
+
+{% block content %}
+    <div class="row contenu-main">
+        <div class="col-lg-7 col-md-7 col-sm-12">
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <form class="form-sign-in" method="post" action="{% url 'display_sign_in' %}">
+                {% csrf_token %}
+                <div class="row titre">
+                    <h4>
+                        Login Form
+                    </h4>
+                </div>
+                <div class="body">
+                    <div class="field-sign d-inline-flex">
+                        <input type="email" placeholder="Email" id="email" name="email" value="{{ email }}" autofocus required>
+                        <label>
+                            <i class="fa fa-user-circle"></i>
+                        </label>
+                    </div>
+                    <div class="field-sign d-inline-flex">
+                        <input type="password" placeholder="Password" id="password" name="password" required>
+                        <label>
+                            <i class="fa fa-lock"></i>
+                        </label>
+                    </div>
+                    <div class="field-sign d-inline-flex errors">
+                        {% if errormsg %}
+                            {{ errormsg|striptags }}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="row footer-sign-in">
+                    <div class="col-6">
+                        <button type="submit" class="btn">Sign in</button>
+                    </div>
+                    <div class="col-6 mt-3">
+                        <a href="#" class="link-perso">
+                            Lost your Password ?
+                        </a>
+                    </div>
+                </div>
+                <div class="row justify-content-center options-sign-in-text">
+                    <h6>Or sign in with</h6>
+                </div>
+                <div class="row d-flex justify-content-center options-sign-in">
+                    <!--Facebook-->
+                    <a href="#" class="fa-lg p-2 m-2 fb-ic"><i class="fa fa-facebook fa-lg"> </i></a>
+                    <!--Twitter-->
+                    <a href="#" class="fa-lg p-2 m-2 tw-ic"><i class="fa fa-twitter fa-lg"> </i></a>
+                    <!--Google +-->
+                    <a href="#" class="fa-lg p-2 m-2 gplus-ic"><i class="fa fa-google-plus fa-lg"> </i></a>
+                </div>
+                <div class="row d-flex justify-content-center link-sign-up">
+                    <h6>Not a member?
+                        <a href="{% url 'display_sign_up_step_1' %}" class="link-perso">
+                            Sign up
+                        </a>
+                    </h6>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+{% block otherscript %}{% endblock otherscript %}
